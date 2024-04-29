@@ -7,7 +7,6 @@
             <x-primary-button class="ms-3">
                 {{ __('Create Task') }}
             </x-primary-button>
-            {{-- <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
         </div>
     </form>
 

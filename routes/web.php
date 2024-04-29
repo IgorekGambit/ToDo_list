@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
-
+use App\Models\User;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -15,8 +15,9 @@ use App\Http\Controllers\TaskController;
 Route::get('/', [TaskController::class, 'show']
 )->middleware(['auth', 'verified'])->name('home');
 
+
 Route::post('/create', [TaskController::class, 'create'])->name('task.create');
-Route::post('/{id}/delete', [TaskController::class, 'delete'])->name('task.delete');
+Route::post('/{task}/delete', [TaskController::class, 'delete'])->name('task.delete');
 
 
 Route::middleware('auth')->group(function () {
